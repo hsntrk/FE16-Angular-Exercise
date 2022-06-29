@@ -1,0 +1,31 @@
+<div class="row m-4 g-4">
+    <div class="col-lg-4 col-md-6" *ngFor="let value of cars">
+        <div class="card shadow-lg">
+            <img src="{{value.image}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h3 class="card-title"><i class="fa-solid fa-car"></i> Model: {{value.model}}</h3>
+                <hr>
+                <h5 class="card-title"><i class="fa-solid fa-hammer"></i> Production Year: {{value.yearproduction}}</h5>
+                <hr>
+                <p class="card-text"><i class="fa-solid fa-gas-pump"></i> Fueltype: {{value.fueltype}}</p>
+                <p class="card-text"><i class="fa-solid fa-chair"></i> Number of Seats: {{value.numberofseats}}</p>
+                <hr>
+                <h4 class="card-title"><i class="fa-solid fa-euro-sign"></i> {{value.price}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container.fluid bg-secondary text-center p-5 row">
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="formInfo" class="row col-4 g-2" (ngSubmit)="valueFromInputs()">
+            <input type="text" formControlName="image" placeholder="image">
+            <input type="text" formControlName="model" placeholder="model">
+            <input type="date" formControlName="yearproduction" placeholder="yearproduction">
+            <input type="text" formControlName="fueltype" placeholder="fueltype">
+            <input type="text" formControlName="numberofseats" placeholder="numberofseats">
+            <input type="text" formControlName="price" placeholder="price">
+            <button class="btn btn-warning">Submit</button>
+        </form>
+    </div>
+</div>

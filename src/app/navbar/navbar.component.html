@@ -1,0 +1,15 @@
+<nav class="navbar-dark bg-dark text-light">
+    <div class="p-3 container-fluid d-flex justify-content-center">
+        <button class="btn btn-danger" (click)="clickCounter()">Donate 10 €</button>
+    </div>
+    <p class="p-2 container-fluid d-flex justify-content-center"> {{counter}} €</p>
+    <div class=" container-fluid d-flex justify-content-center">
+        <ng-template [ngIf]="counter >= 200" [ngIfElse]="nichts">
+            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> You are "VIP" <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        </ng-template>
+
+        <ng-template #nichts>
+            <p> </p>
+        </ng-template>
+    </div>
+</nav>
